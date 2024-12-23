@@ -28,9 +28,9 @@ public class LoggingFilter extends OncePerRequestFilter {
         filterChain.doFilter(requestWrapper, responseWrapper);
 
 
-//        if (!request.getRequestURI().startsWith("/js") && !request.getRequestURI().startsWith("/css")) {
+        if (!request.getRequestURI().startsWith("/js") && !request.getRequestURI().startsWith("/css")) {
             log.info("URI: [{}], METHOD: [{}]", request.getRequestURI(), request.getMethod());
-//        }
+        }
         responseWrapper.copyBodyToResponse();
     }
 
